@@ -41,11 +41,6 @@ and those with secondary constructors or static factories are also supported)-->
 			<artifactId>kotlin-stdlib-jdk8</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
 			<groupId>no.tornado</groupId>
 			<artifactId>tornadofx</artifactId>
 			<version>1.7.17</version>
@@ -62,7 +57,7 @@ and those with secondary constructors or static factories are also supported)-->
 			<artifactId>reactor-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
+	
 	</dependencies>
 	
 	<build>

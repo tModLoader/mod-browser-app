@@ -1,28 +1,25 @@
 package net.tmodloader.modbrowser.view
 
-import javafx.collections.FXCollections
+import net.tmodloader.modbrowser.controller.RootController
+import net.tmodloader.modbrowser.fragment.MenuFragment
+import net.tmodloader.modbrowser.fragment.StatusFragment
 import net.tmodloader.modbrowser.service.FragmentService
-import tornadofx.*
+import tornadofx.View
+import tornadofx.borderpane
 
-class MyView : View() {
+class RootView : View() {
 
-    private val controller: MyController by inject()
+	private val controller : RootController by inject()
 
-    private val fragmentService: FragmentService by di()
+	private val fragmentService : FragmentService by di()
 
-    override val root = vbox {
-        label("My items")
-        listview(controller.values)
-        button("Click me") {
-            action {
-                fragmentService.openSimpleFragment("test modal")
-            }
-        }
-    }
+	override val root = borderpane {
 
+		prefWidth = 750.0
+		prefHeight = 600.0
 
+		top<MenuFragment>()
+		bottom<StatusFragment>()
+	}
 }
 
-class MyController : Controller() {
-    val values = FXCollections.observableArrayList("Alpha", "Beta", "Gamma", "Delta")
-}
