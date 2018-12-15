@@ -1,5 +1,6 @@
 package net.tmodloader.modbrowser
 
+import net.tmodloader.modbrowser.ext.Spring
 import net.tmodloader.modbrowser.view.RootView
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.WebApplicationType
@@ -13,6 +14,8 @@ import kotlin.reflect.KClass
 
 @SpringBootApplication
 class ModBrowserApplication : App(RootView::class) {
+
+	override val primaryView = RootView::class
 
 	companion object {
 		var applicationContext : ApplicationContext by singleAssign()
@@ -31,8 +34,8 @@ class ModBrowserApplication : App(RootView::class) {
 			autowiring
 		 */
 		FX.dicontainer = object : DIContainer {
-			override fun <T : Any> getInstance(type : KClass<T>) : T = applicationContext.getBean(type.java)
-			override fun <T : Any> getInstance(type : KClass<T>, name : String) : T = applicationContext.getBean(type.java, name)
+			override fun <T : Any> getInstance(type : KClass<T>) : T = Spring.getBean(type)
+			override fun <T : Any> getInstance(type : KClass<T>, name : String) : T = Spring.getBean(type, name)
 		}
 	}
 }
