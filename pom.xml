@@ -17,6 +17,7 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<kotlin.version>1.2.71</kotlin.version>
+		<maven.allopen.version>1.2.71</maven.allopen.version>
 		<file.encoding>UTF-8</file.encoding>
 		<!--Enforce incremental compile, improved perfomance. (avail. Kotlin 1.1.2 and up-->
 		<kotlin.compiler.incremental>true</kotlin.compiler.incremental>
@@ -134,7 +135,7 @@ and those with secondary constructors or static factories are also supported)-->
 					<dependency>
 						<groupId>org.jetbrains.kotlin</groupId>
 						<artifactId>kotlin-maven-allopen</artifactId>
-						<version>${kotlin.version}</version>
+						<version>${maven.allopen.version}</version>
 					</dependency>
 				</dependencies>
 				<executions>

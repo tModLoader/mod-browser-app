@@ -2,6 +2,7 @@ package net.tmodloader.modbrowser
 
 import net.tmodloader.modbrowser.view.RootView
 import org.springframework.boot.SpringApplication
+import org.springframework.boot.WebApplicationType
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.context.ApplicationContext
 import tornadofx.App
@@ -21,7 +22,10 @@ class ModBrowserApplication : App(RootView::class) {
 	override fun init() {
 		super.init()
 
-		applicationContext = SpringApplication.run(ModBrowserApplication::class.java)
+		val spring = SpringApplication(ModBrowserApplication::class.java)
+		spring.webApplicationType = WebApplicationType.NONE
+		applicationContext = spring.run()
+
 
 		/*
 			The following is needed (overriding the di() option)
