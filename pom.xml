@@ -35,10 +35,6 @@
 	
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-webflux</artifactId>
-		</dependency>
-		<dependency>
 			<!--adds support for serialization/deserialization of Kotlin classes and data classes (single constructor classes can be used automatically,
 and those with secondary constructors or static factories are also supported)-->
 			<groupId>com.fasterxml.jackson.module</groupId>
@@ -58,6 +54,17 @@ and those with secondary constructors or static factories are also supported)-->
 			<groupId>no.tornado</groupId>
 			<artifactId>tornadofx</artifactId>
 			<version>1.7.17</version>
+		</dependency>
+		
+		<!-- REACTIVE -->
+		<dependency>
+			<groupId>io.reactivex.rxjava2</groupId>
+			<artifactId>rxjava</artifactId>
+			<version>2.2.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-webflux</artifactId>
 		</dependency>
 		
 		<!-- LOGGING -->

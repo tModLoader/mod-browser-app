@@ -15,7 +15,6 @@ import kotlin.reflect.KClass
 class ModBrowserApplication : App(RootView::class) {
 
 	companion object {
-		// TODO can make val?
 		var applicationContext : ApplicationContext by singleAssign()
 	}
 
@@ -25,7 +24,6 @@ class ModBrowserApplication : App(RootView::class) {
 		val spring = SpringApplication(ModBrowserApplication::class.java)
 		spring.webApplicationType = WebApplicationType.NONE
 		applicationContext = spring.run()
-
 
 		/*
 			The following is needed (overriding the di() option)

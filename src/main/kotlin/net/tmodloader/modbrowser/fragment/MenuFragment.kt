@@ -14,6 +14,8 @@ class MenuFragment : Fragment() {
 
 	override val root = menubar {
 		useMaxWidth = true
+//		MACOS support
+		useSystemMenuBarProperty().set(true)
 
 		menu("Options") {
 			menu("Application") {
